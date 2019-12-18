@@ -2,7 +2,6 @@ var express = require("express");
 var burger = require("../models/burger.js");
 var router = express.Router();
 
-
 router.get("/", function (req, res) {
     burger.all(function (data) {
         var hbsObject = {
@@ -20,7 +19,6 @@ router.post("/api/burgers", function (req, res) {
         res.json({ id: result.insertId });
     });
 });
-
 
 router.put("/api/burgers/:id", function(req, res) {
     console.log("condition", req.params);

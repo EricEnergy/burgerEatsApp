@@ -1,10 +1,12 @@
-<h1 class="display-4 text-center">Burgers Paradise</h1>
-
+<h1 class="display-4 text-center">Burgers Pixels</h1>
+<div id="t" class=>
+    <img class="someClass center-block" src="\assets\images\2039121_1.jpg">
+</div>
 
 <div class="container">
   <div class="row">
 
-    <div class="col-md-4 text-center pt-2 mb-4 mt-4">
+    <div class="col-md-4 text-center pt-2">
       <h3 class="mb-3"></h3>
       <form class="create-">
         <div class="form-group">
@@ -28,7 +30,7 @@
     </div>
 
     <div class="col-md-4 text-center bg-light pt-2 mb-4">
-      <h3>Need to eat!</h3>
+      <h3>Choose a Burger to Eat!</h3>
       <hr class="my-4">
       {{#each burgers}}
       {{#unless devoured}}
@@ -38,7 +40,7 @@
     </div>
 
     <div class="col-md-4 text-center pt-2 mb-4">
-      <h3>Already eaten!</h3>
+      <h3>Digesting!</h3>
       <hr class="my-4">
       {{#each burgers}}
       {{#if devoured}}

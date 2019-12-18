@@ -1,3 +1,11 @@
 body {
     background-color: rgb(255, 233, 34);
 }
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height:auto;
+    width: 200px;
+ }
