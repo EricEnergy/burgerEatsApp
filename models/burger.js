@@ -17,7 +17,7 @@ var burger = {
 
 
     update: function(condition, cb) {
-        orm.updateOne("burgers", condition, function(res) {
+        orm.updateOne(condition, function(res) {
             cb(res);
           });
     },

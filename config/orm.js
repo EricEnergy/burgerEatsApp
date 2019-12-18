@@ -23,7 +23,7 @@ var orm = {
     var queryString = "UPDATE burgers SET devoured = true WHERE `id` = ?;";
     connection.query(queryString, [idNum], function (err, result) {
       if (err) throw err;
-      console.log(result);
+      cb(result);
     });
   },
 };

@@ -2,7 +2,22 @@
 	{{burger_name}}
 
 	<button class="change-devoured btn btn-danger btn-sm" data-id="{{id}}" data-newdevoured="{{devoured}}">
-		{{#if devoured}}DEVOUR{{else}}NOT DEVOURED{{/if}}
+		{{#if devoured}}NOM NOM{{else}}NOT DEVOURED{{/if}}
 	</button>
 
 </p>
+
+
+<script>
+$(".change-devoured").on("click", function(event){
+  event.preventDefault();
+  var burgerName = $(this).attr("data-id");
+  $.ajax({
+    method: "PUT",
+    url: "/api/burgers/" + burgerName,
+  }).then(function(result, err){
+    location.reload();
+  })
+})
+
+</script>
