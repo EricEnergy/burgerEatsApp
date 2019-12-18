@@ -1,5 +1,5 @@
 
-USE burgers_db;
+USE tbmt2yhbc7bxfbop;
 
 
 INSERT INTO burgers (burger_name, devoured) values ("Burger One", false);
