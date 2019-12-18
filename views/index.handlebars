@@ -1,0 +1,67 @@
+<h1 class="display-4 text-center">Burgers Paradise</h1>
+
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-4 text-center pt-2 mb-4 mt-4">
+      <h3 class="mb-3"></h3>
+      <form class="create-">
+        <div class="form-group">
+          <label for="c"></label>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="col-md-4 text-center pt-2 mb-4">
+      <h3 class="mb-3">Add Burger</h3>
+      <hr class="my-4">
+      <form class="create-burger">
+        <div class="form-group">
+          <label for="burger">Burger Name:</label>
+          <input type="text" id="burgerIn" name="name">
+        </div>
+        <button type="submit" id="burgerUp" class="btn btn-primary">Add Burger</button>
+      </form>
+    </div>
+
+    <div class="col-md-4 text-center bg-light pt-2 mb-4">
+      <h3>Need to eat!</h3>
+      <hr class="my-4">
+      {{#each burgers}}
+      {{#unless devoured}}
+      {{> burgers/burger-block devoured=true}}
+      {{/unless}}
+      {{/each}}
+    </div>
+
+    <div class="col-md-4 text-center pt-2 mb-4">
+      <h3>Already eaten!</h3>
+      <hr class="my-4">
+      {{#each burgers}}
+      {{#if devoured}}
+      {{> burgers/burger-block devoured=false}}
+      {{/if}}
+      {{/each}}
+    </div>
+
+  </div>
+</div>
+
+<script>
+$("#burgerUp").on("click", function(event){
+  event.preventDefault();
+  var burgerName = $("#burgerIn").val();
+  $.ajax({
+    method: "POST",
+    url: "/api/burgers",
+    data: {burger_name: burgerName}
+  }).then(function(result, err){
+    console.log(result);
+    console.log(err);
+    location.reload();
+  })
+})
+</script>
