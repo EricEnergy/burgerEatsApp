@@ -20,11 +20,17 @@ router.post("/api/burgers", function (req, res) {
     });
 });
 
-router.put("/api/burgers/:id", function(req, res) {
+router.put("/api/burgers/:id", function (req, res) {
     console.log("condition", req.params);
-    burger.update(req.params.id, function(result){
+    burger.update(req.params.id, function (result) {
         res.json(result)
     });
-  });
+});
 
-  module.exports = router;
+router.delete('/api/burgers/:id', function (req, res) {
+    var id = req.params.id;
+    burger.delete(id, function (result) {
+        res.json(result);
+    });
+});
+module.exports = router;

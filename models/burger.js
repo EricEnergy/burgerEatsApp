@@ -22,5 +22,11 @@ var burger = {
           });
     },
 
+    delete: function(condition, cb) {
+        orm.delete(condition, function(res) {
+            cb(res);
+          });
+    },
+
 };
 module.exports = burger;
