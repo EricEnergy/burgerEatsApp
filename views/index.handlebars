@@ -34,7 +34,7 @@
       <hr class="my-4">
       {{#each burgers}}
       {{#unless devoured}}
-      {{> burgers/burger-block devoured=true}}
+      {{> burgers/burger-block checkdevoured=false}}
       {{/unless}}
       {{/each}}
     </div>
@@ -44,7 +44,7 @@
       <hr class="my-4">
       {{#each burgers}}
       {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
+      {{> burgers/burger-block checkdevoured=true}}
       {{/if}}
       {{/each}}
     </div>
